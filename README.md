@@ -1,5 +1,9 @@
 # MyChatApp 🟦
 
+![GitHub top language](https://img.shields.io/github/languages/top/USERNAME/REPO-NAME?color=blue)
+![GitHub issues](https://img.shields.io/github/issues/USERNAME/REPO-NAME)
+![GitHub license](https://img.shields.io/github/license/USERNAME/REPO-NAME)
+
 A modern **real-time chat application** built with the **MERN stack (MongoDB, Express, React, Node.js)**.  
 Supports private messaging, online/offline status, responsive UI, and avatar support.
 
@@ -34,23 +38,14 @@ Supports private messaging, online/offline status, responsive UI, and avatar sup
 
 ## ⚡ Installation
 
-1. Clone the repository
+### 1. Clone the repository
+
+```bash
 git clone https://github.com/USERNAME/REPO-NAME.git
 cd myChatApp
 
-3. Install dependencies
-Backend
+
 cd backend
 npm install
-
-Frontend
 cd ../frontend
 npm install
-
-3. Setup environment variables
-
-Create a .env file in backend/ folder:
-
-PORT=4000
-MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_jwt_secret
