@@ -17,7 +17,7 @@ const User = ({ user }) => {
         className="flex items-center gap-4 px-4 py-4 pl-8 rounded-xl cursor-pointer 
   hover:bg-base-200 transition-all duration-200 mt-2"
       >
-        <div className={ `avatar ${isOnline? "online" : ""}`}>
+        <div className={ `avatar ${isOnline? "avatar-online" : ""}`}>
           <div className="w-16 h-16 rounded-full overflow-hidden">
             <img src={selectedConversation?.profilePic || "/mypp.jpeg"} />
           </div>
