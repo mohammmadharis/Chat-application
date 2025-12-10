@@ -1,9 +1,9 @@
 import React from "react";
-import Left from "./home/leftPart/Left";
-import Right from "./home/rigthPart/Right";
-import SignUp from "./components/SignUp";
-import Login from "./components/Login";
-import { useAuth } from "./context/AuthProvider";
+import Left from "./home/leftPart/Left.jsx";
+import Right from "./home/rightPart/Right.jsx";
+import SignUp from "./components/SignUp.jsx";
+import Login from "./components/Login.jsx";
+import { useAuth } from "./context/AuthProvider.jsx";
 import { Navigate, Route, Routes } from "react-router-dom";
 
 

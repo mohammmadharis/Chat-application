@@ -16,6 +16,8 @@ export const SocketProvider = ({ children }) => {
 
     const newSocket = io("https://chat-application-acdj.onrender.com", {
       query: { userId: authUser.user._id },
+       withCredentials: true,
+      transports: ["websocket"], 
     });
 
     setSocket(newSocket);
