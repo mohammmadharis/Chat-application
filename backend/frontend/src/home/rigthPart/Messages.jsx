@@ -2,34 +2,42 @@ import React, { useEffect, useRef } from "react";
 import Message from "./Message";
 import useGetMessage from "../../context/useGetMessage.jsx";
 import Loading from "../../components/Loading.jsx";
-import useGetSocketMessage from "../../context/UseGetSocketMessage.js";
-
+import useGetSocketMessage from "../../context/useGetSocketMessage.js";
 function Messages() {
   const { loading, messages } = useGetMessage();
-  useGetSocketMessage(); // listen incoming messages
+  useGetSocketMessage(); // listing incoming messages
+  console.log(messages);
 
   const lastMsgRef = useRef();
-
   useEffect(() => {
-    if (lastMsgRef.current) {
-      lastMsgRef.current.scrollIntoView({ behavior: "smooth" });
-    }
+    setTimeout(() => {
+      if (lastMsgRef.current) {
+        lastMsgRef.current.scrollIntoView({
+          behavior: "smooth",
+        });
+      }
+    }, 100);
   }, [messages]);
-
   return (
-    <div className="flex-1 flex flex-col overflow-y-auto no-scrollbar p-2">
+    <div
+      className="flex-1 overflow-y-auto"
+      style={{ minHeight: "calc(92vh - 8vh)" }}
+    >
       {loading ? (
         <Loading />
-      ) : messages.length > 0 ? (
+      ) : (
+        messages.length > 0 &&
         messages.map((message) => (
           <div key={message._id} ref={lastMsgRef}>
             <Message message={message} />
           </div>
         ))
-      ) : (
-        <div className="flex-1 flex items-center justify-center">
-          <p className="text-center text-gray-400">
-            Say hi to start the conversation
+      )}
+
+      {!loading && messages.length === 0 && (
+        <div>
+          <p className="text-center mt-[20%]">
+            Say! Hi to start the conversation
           </p>
         </div>
       )}

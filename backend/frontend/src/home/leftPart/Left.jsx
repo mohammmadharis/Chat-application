@@ -1,18 +1,21 @@
 import React from "react";
-import Search from "./Search.jsx";
-import Users from "./Users.jsx";
-import Logout from "./Logout.jsx";
+import Search from "./Search";
+import Users from "./Users";
+import Logout from "./Logout";
 
-const Left = () => {
+function Left() {
   return (
-    <div className="flex flex-col h-full">
+    <div className="w-full   bg-black text-gray-300">
       <Search />
-      <div className="flex-1 overflow-y-auto no-scrollbar">
+      <div
+        className=" flex-1  overflow-y-auto"
+        style={{ minHeight: "calc(84vh - 10vh)" }}
+      >
         <Users />
       </div>
       <Logout />
     </div>
   );
-};
+}
 
 export default Left;

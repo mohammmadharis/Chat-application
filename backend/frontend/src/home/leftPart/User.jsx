@@ -3,6 +3,7 @@ import useConversation from "../../zustand/useConversation.js";
 import { useSocketContext } from "../../context/SocketContext.jsx";
 
 const User = ({ user }) => {
+  console.log(user)
   const { selectedConversation, setSelectedConversation } = useConversation();
    const { onlineUsers} = useSocketContext() 
    const isOnline = onlineUsers.includes(user._id.toString())
