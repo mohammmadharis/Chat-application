@@ -1,5 +1,5 @@
 @import "tailwindcss";
-/* @plugin "daisyui"; */
+@plugin "daisyui";
 
 .flex-1::-webkit-scrollbar{
   display: none;
@@ -37,4 +37,14 @@
 
 .no-scrollbar::-webkit-scrollbar {
   display: none;
+}
+
+/* Hide scrollbar for Chrome, Safari and Edge */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for Firefox */
+.no-scrollbar {
+  scrollbar-width: none;
 }

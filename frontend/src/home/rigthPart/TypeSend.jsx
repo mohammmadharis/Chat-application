@@ -1,10 +1,11 @@
+
 import React, { useState } from "react";
 import { IoSend } from "react-icons/io5";
 import useSendMessage from "../../context/useSendMessage.jsx";
 
 function TypeSend() {
   const [message, setMessage] = useState("");
-  const {  sendMessages } = useSendMessage();
+  const {sendMessages } = useSendMessage();
 
   const handleSubmit = async (e) => {
     console.log(e);
@@ -16,7 +17,7 @@ function TypeSend() {
   return (
     <form onSubmit={handleSubmit}>
       <div className="flex space-x-1 h-[8vh]  bg-gray-800">
-        <div className=" w-[70%] mx-4">
+        <div className=" w-[95%] mx-4 mt-2">
           <input
             type="text"
             placeholder="Type here"
@@ -26,7 +27,7 @@ function TypeSend() {
           />
         </div>
         <button>
-          <IoSend className="text-3xl" />
+          <IoSend className="text-3xl mr-2" />
         </button>
       </div>
     </form>

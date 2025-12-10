@@ -11,7 +11,7 @@ function Users() {
         Messages
       </h1>
       <div
-        className="py-2 flex-1 overflow-y-auto"
+        className="py-2 flex-1 overflow-y-auto no-scrollbar"
         style={{ maxHeight: "calc(84vh - 10vh)" }}
       >
         {allUsers.map((user, index) => (
@@ -20,6 +20,6 @@ function Users() {
       </div>
     </div>
   );
-}
+}   
 
 export default Users;
