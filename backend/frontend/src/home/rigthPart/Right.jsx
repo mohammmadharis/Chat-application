@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
-import Chatuser from "./Chatuser";
+import ChatUser from "./ChatUser";
 import Messages from "./Messages";
-import Typesend from "./Typesend";
+import TypeSend from "./TypeSend";
 import useConversation from "../../zustand/useConversation.js";
 import { useAuth } from "../../context/AuthProvider.jsx";
 import { CiMenuFries } from "react-icons/ci";
@@ -18,14 +18,14 @@ function Right() {
           <NoChatSelected />
         ) : (
           <>
-            <Chatuser />
+            <ChatUser />
             <div
               className=" flex-1 overflow-y-auto"
               style={{ maxHeight: "calc(92vh - 8vh)" }}
             >
               <Messages />
             </div>
-            <Typesend />
+            <TypeSend />
           </>
         )}
       </div>
