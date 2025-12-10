@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { IoMdSend } from "react-icons/io";
-import useSendMessage from "../../context/useSendMessage";
+import useSendMessage from "../../context/useSendMessage.jsx";
 
 const TypeSend = () => {
 

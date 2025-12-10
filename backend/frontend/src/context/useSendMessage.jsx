@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import useConversation from "../zustand/useConversation";
+import useConversation from "../zustand/useConversation.js";
 
 const useSendMessage = () => {
   const [loading, setLoading] = useState(false);
