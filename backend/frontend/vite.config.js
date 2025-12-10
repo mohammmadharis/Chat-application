@@ -9,7 +9,7 @@ export default defineConfig({
     port: 3001,
     proxy: {
       "/api": {
-        target: "https://chat-application-acdj.onrender.com",
+        target: "http://localhost:4002",
         changeOrigin: true,
       },
 

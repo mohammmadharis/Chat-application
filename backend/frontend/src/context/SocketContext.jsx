@@ -14,7 +14,7 @@ export const SocketProvider = ({ children }) => {
   useEffect(() => {
     if (!authUser) return;
 
-    const newSocket = io(true, {
+    const newSocket = io("https://chat-application-acdj.onrender.com", {
       query: { userId: authUser.user._id },
     });
 
