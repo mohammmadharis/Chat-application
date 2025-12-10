@@ -28,7 +28,7 @@ function App() {
                   className="drawer-toggle"
                 />
                 <div className="drawer-content flex flex-col items-center justify-center">
-                  <Right />
+                  <Left />
                 </div>
                 <div className="drawer-side">
                   <label
@@ -37,7 +37,7 @@ function App() {
                     className="drawer-overlay"
                   ></label>
                   <ul className="menu w-80 min-h-full bg-black text-base-content">
-                    <Left />
+                    <Right />
                   </ul>
                 </div>
               </div>
