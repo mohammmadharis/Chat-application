@@ -1,73 +1,56 @@
 import React from "react";
 import Left from "./home/leftPart/Left.jsx";
 import Right from "./home/rigthPart/Right.jsx";
-import SignUp from "../src/components/SignUp.jsx";
-import Login from "../src/components/Login.jsx";
-import { useAuth } from "../src/context/AuthProvider.jsx";
+import SignUp from "./components/SignUp.jsx";
+import Login from "./components/Login.jsx";
+import { useAuth } from "./context/AuthProvider.jsx";
 import { Navigate, Route, Routes } from "react-router-dom";
 
-
-
 const App = () => {
-  const [authUser, setAuthUser] = useAuth();
-  console.log(authUser);
+  const [authUser] = useAuth();
+
   return (
-    //   <div className="h-screen w-screen">
-    //   <SignUp />
-    //   {/* <Login/> */}
-    // </div>
-        
-       <>
-      <Routes>
-        <Route
-          path="/"
-          element={
-            authUser ? (
-              // <div className="flex h-screen">
-              //   <Left />
-              //   <Right />
-              // </div>
-              <div className="drawer lg:drawer-open">
-                {/* <input
-                  id="my-drawer-2"
-                  type="checkbox"
-                  className="drawer-toggle"
-                />
-                <div className="drawer-content flex flex-col items-center justify-center">
-                  <Right />
-                </div> */}
-                <div className="drawer-side">
-                  <label
-                    htmlFor="my-drawer-2"
-                    aria-label="close sidebar"
-                    className="drawer-overlay"
-                  ></label>
-                  <ul className="menu w-80 min-h-full bg-black text-base-content">
-                    <Left />
-                  </ul>
-                </div>
+    <Routes>
+      <Route
+        path="/"
+        element={
+          authUser ? (
+            <div className="drawer lg:drawer-open h-screen">
+              <input
+                id="my-drawer-2"
+                type="checkbox"
+                className="drawer-toggle"
+              />
+              {/* Right / Main content */}
+              <div className="drawer-content flex flex-row h-screen w-screen">
+                <Right className="flex-1 min-h-full overflow-auto" />
               </div>
-            ) : (
-              <Navigate to={"/login"} />
-            )
-          }
-        />
-        <Route
-          path="/login"
-          element={authUser ? <Navigate to="/" /> : <Login />}
-        />
-        <Route
-          path="/signup"
-          element={authUser ? <Navigate to="/" /> : <SignUp />}
-        />
-      </Routes>
-      
-  
-    </>
-
-
-    // <Loading/>
-
+              {/* Left / Sidebar */}
+              <div className="drawer-side w-80">
+                <label
+                  htmlFor="my-drawer-2"
+                  aria-label="close sidebar"
+                  className="drawer-overlay"
+                ></label>
+                <ul className="menu w-80 min-h-full bg-black text-white">
+                  <Left />
+                </ul>
+              </div>
+            </div>
+          ) : (
+            <Navigate to={"/login"} />
+          )
+        }
+      />
+      <Route
+        path="/login"
+        element={authUser ? <Navigate to="/" /> : <Login />}
+      />
+      <Route
+        path="/signup"
+        element={authUser ? <Navigate to="/" /> : <SignUp />}
+      />
+    </Routes>
   );
 };
 
