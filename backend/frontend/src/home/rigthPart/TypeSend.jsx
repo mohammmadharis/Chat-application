@@ -1,39 +1,36 @@
 import React, { useState } from "react";
-import { IoMdSend } from "react-icons/io";
-import useSendMessage from "../../context/useSendMessage.jsx";
+import { IoSend } from "react-icons/io5";
+import useSendMessage from "../../context/useSendMessage.js";
 
-const TypeSend = () => {
-
-  const [message, setMessage]  = useState("")
-  const  {  sendMessages } = useSendMessage()
-
+function TypeSend() {
+  const [message, setMessage] = useState("");
+  const {  sendMessages } = useSendMessage();
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
-     await sendMessages(message)
-     setMessage("")
-  }
+    console.log(e);
+    e.preventDefault();
+    await sendMessages(message);
+    setMessage("");
+  };
+
   return (
-  <form action="" onSubmit={handleSubmit}>
-
-      <div className="flex items-center gap-2  border-slate-700 p-4 bg-slate-900 h-[">
-      {/* Input */}
-      <input
-        type="text"
-        placeholder="Type a message..."
-        className="flex-1 input  text-gray-800 placeholder-gray-400 text-teal-50 outline-none px-4"
-        value={message}
-        onChange={(e)=> setMessage(e.target.value)}
-      />
-
-      <div>
+    <form onSubmit={handleSubmit}>
+      <div className="flex space-x-1 h-[8vh]  bg-gray-800">
+        <div className=" w-[70%] mx-4">
+          <input
+            type="text"
+            placeholder="Type here"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            className="border border-gray-700 rounded-xl outline-none mt-1 px-4 py-3 w-full"
+          />
+        </div>
         <button>
-          <IoMdSend size={30} />
+          <IoSend className="text-3xl" />
         </button>
       </div>
-    </div>
-  </form>
+    </form>
   );
-};
+}
 
 export default TypeSend;
