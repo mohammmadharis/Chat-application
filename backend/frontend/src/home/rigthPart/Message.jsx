@@ -15,7 +15,9 @@ const Message = ({ message }) => {
 
   return (
     <div className={`flex ${alignment} mb-2 px-2`}>
-      <div className={`max-w-xs break-words p-2 rounded-lg text-white ${bubbleColor}`}>
+      <div
+        className={`w-auto max-w-[75%] break-words p-3 rounded-xl text-white ${bubbleColor}`}
+      >
         <div>{message.message}</div>
         <div className="text-xs text-gray-200 mt-1 text-right">{formattedTime}</div>
       </div>
