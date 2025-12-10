@@ -15,23 +15,23 @@ const App = () => {
         path="/"
         element={
           authUser ? (
-            <div className="drawer lg:drawer-open h-screen w-screen">
-              <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
+            <div className="drawer lg:drawer-open h-screen w-screen overflow-hidden">
+              <input id="my-drawer-2" type="checkbox" className="drawer-toggle hidden" />
 
-              {/* Desktop + Right Content */}
-              <div className="drawer-content flex flex-row h-screen w-screen">
+              {/* Drawer Content */}
+              <div className="drawer-content flex h-screen w-screen overflow-hidden">
                 {/* Left Sidebar */}
-                <div className="w-80 min-h-full bg-black text-white overflow-auto">
+                <div className="w-80 h-full bg-black text-white flex flex-col">
                   <Left />
                 </div>
 
                 {/* Right Messages */}
-                <div className="flex-1 h-full overflow-auto">
+                <div className="flex-1 h-full flex flex-col overflow-hidden">
                   <Right />
                 </div>
               </div>
 
-              {/* Mobile Drawer */}
+              {/* Drawer Overlay */}
               <div className="drawer-side">
                 <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
               </div>

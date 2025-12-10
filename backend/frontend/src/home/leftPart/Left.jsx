@@ -5,9 +5,9 @@ import Logout from "./Logout.jsx";
 
 const Left = () => {
   return (
-    <div className="flex flex-col h-screen w-full bg-black text-gray-300">
+    <div className="flex flex-col h-full">
       <Search />
-      <div className="flex-1 overflow-y-auto">
+      <div className="flex-1 overflow-y-auto no-scrollbar">
         <Users />
       </div>
       <Logout />

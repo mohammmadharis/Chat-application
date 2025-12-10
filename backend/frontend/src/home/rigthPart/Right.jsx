@@ -14,13 +14,13 @@ function Right() {
   }, [setSelectedConversation]);
 
   return (
-    <div className="flex flex-col h-screen w-full bg-slate-900 text-gray-300">
+    <div className="flex flex-col h-full w-full">
       {!selectedConversation ? (
         <NoChatSelected />
       ) : (
         <>
           <ChatUser />
-          <div className="flex-1 overflow-y-auto">
+          <div className="flex-1 overflow-y-auto no-scrollbar p-2">
             <Messages />
           </div>
           <TypeSend />
@@ -35,18 +35,17 @@ export default Right;
 const NoChatSelected = () => {
   const [authUser] = useAuth();
   return (
-    <div className="relative flex-1 flex items-center justify-center">
+    <div className="flex-1 flex items-center justify-center relative">
       <label
         htmlFor="my-drawer-2"
-        className="btn btn-ghost drawer-button lg:hidden absolute left-5"
+        className="btn btn-ghost drawer-button lg:hidden absolute left-5 top-5"
       >
         <CiMenuFries className="text-white text-xl" />
       </label>
       <h1 className="text-center px-4">
-        Welcome{" "}
-        <span className="font-semibold text-xl">{authUser.user.fullName}</span>
+        Welcome <span className="font-semibold text-xl">{authUser.user.fullName}</span>
         <br />
-        No chat selected, please start conversation by selecting anyone from your contacts
+        No chat selected, please select a contact to start conversation
       </h1>
     </div>
   );
