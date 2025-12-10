@@ -3,7 +3,7 @@ import Search from "./Search";
 import Users from "./Users";
 import Logout from "./Logout";
 
-const Left = () => {
+function Left() {
   return (
     <div className="w-full   bg-black text-gray-300">
       <Search />
@@ -16,6 +16,6 @@ const Left = () => {
       <Logout />
     </div>
   );
-};
+}
 
 export default Left;

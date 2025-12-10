@@ -1,23 +1,18 @@
+
 import React from "react";
 import Left from "./home/leftPart/Left";
 import Right from "./home/rigthPart/Right";
 import SignUp from "./components/SignUp";
 import Login from "./components/Login";
 import { useAuth } from "./context/AuthProvider";
+// import { Toaster } from "react-hot-toast";
+
 import { Navigate, Route, Routes } from "react-router-dom";
-
-
-
-const App = () => {
-  const [authUser, setAuthUser] = useAuth();
+function App() {
+  const [authUser] = useAuth();
   console.log(authUser);
   return (
-    //   <div className="h-screen w-screen">
-    //   <SignUp />
-    //   {/* <Login/> */}
-    // </div>
-        
-       <>
+    <>
       <Routes>
         <Route
           path="/"
@@ -61,14 +56,9 @@ const App = () => {
           element={authUser ? <Navigate to="/" /> : <SignUp />}
         />
       </Routes>
-      
-  
+      {/* <Toaster /> */}
     </>
-
-
-    // <Loading/>
-
   );
-};
+}
 
 export default App;

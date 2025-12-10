@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import { useAuth } from "./AuthProvider";
+import { useAuth } from "../context/AuthProvider.jsx";
 import { io } from "socket.io-client";
 
 const SocketContext = createContext();
@@ -14,8 +14,10 @@ export const SocketProvider = ({ children }) => {
   useEffect(() => {
     if (!authUser) return;
 
-    const newSocket = io("http://localhost:4002", {
+    const newSocket = io("https://chat-application-acdj.onrender.com", {
       query: { userId: authUser.user._id },
+       withCredentials: true,
+      transports: ["websocket"], 
     });
 
     setSocket(newSocket);
