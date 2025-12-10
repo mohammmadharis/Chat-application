@@ -2,16 +2,19 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 
+    // "@vitejs/plugin-react": "^5.1.1",
+
+
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  server: {
-    port: 3001,
-    proxy: {
-      "/api": {
-        target: "http://localhost:4002",
-        changeOrigin: true,
-      },
+  // server: {
+  //   port: 3001,
+  //   proxy: {
+  //     "/api": {
+  //       target: "http://localhost:4002",
+  //       changeOrigin: true,
+  //     },
 
       // "/api/message": {       
       //   target: "http://localhost:4002",
@@ -21,6 +24,6 @@ export default defineConfig({
       //   target: "http://localhost:4002",
       //   changeOrigin: true,
       // },
-    },
-  },
+    // },
+  // },
 })
