@@ -5,7 +5,7 @@ import useSendMessage from "../../context/useSendMessage.jsx";
 const TypeSend = () => {
 
   const [message, setMessage]  = useState("")
-  const  { loading, sendMessages } = useSendMessage()
+  const  {  sendMessages } = useSendMessage()
 
 
   const handleSubmit = async (e) => {

@@ -1,6 +1,6 @@
 import React from "react";
-import Left from "../src/home/leftPart/Left.jsx";
-import Right from "../src/home/rightPart/Right.jsx";
+import Left from "./home/leftPart/Left.jsx";
+import Right from "./home/rigthPart/Right.jsx";
 import SignUp from "../src/components/SignUp.jsx";
 import Login from "../src/components/Login.jsx";
 import { useAuth } from "../src/context/AuthProvider.jsx";
