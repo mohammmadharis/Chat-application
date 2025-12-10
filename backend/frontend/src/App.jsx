@@ -1,7 +1,7 @@
 import React from "react";
 import Left from "./home/leftPart/Left";
 import Right from "./home/rigthPart/Right";
-import SignUp from "./components/Signup";
+import SignUp from "./components/SignUp";
 import Login from "./components/Login";
 import { useAuth } from "./context/AuthProvider";
 import { Toaster } from "react-hot-toast";
